@@ -9,6 +9,10 @@ buildNumber.properties
 .mvn/timing.properties
 .project
 .classpath
+.settings
+.theia
+
+
 
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
