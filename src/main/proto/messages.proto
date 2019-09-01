@@ -1,5 +1,8 @@
+syntax = "proto2";
 package vdcapi;
-
+option java_multiple_files = true;
+option java_package = "io.fennix.jvdc.proto";
+option java_outer_classname = "VdcApiProto";
 import "vdcapi.proto";
 
 enum Type {

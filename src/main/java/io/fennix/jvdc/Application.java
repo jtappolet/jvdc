@@ -3,7 +3,7 @@ package io.fennix.jvdc;
 import com.blade.Blade;
 import com.blade.event.EventType;
 import io.fennix.jvdc.announce.ServiceAnnouncer;
-import io.fennix.jvdc.socket.TcpSocketListener;
+import io.fennix.jvdc.socket.VdcRpcServer;
 
 public class Application {
 
@@ -21,7 +21,7 @@ public class Application {
             "       _\\//\\\\\\\\\\\\_____\\//\\\\\\_____\\//\\\\\\\\\\\\\\/\\\\__\\///\\\\\\\\\\\\\\\\_ \n" +
             "        __\\//////_______\\///_______\\///////\\//_____\\////////__\n")
                 .on(EventType.SERVER_STARTED, e -> {
-                    TcpSocketListener.instance().openSocket(9001);
+                    VdcRpcServer.instance().openSocket(9001);
                     ServiceAnnouncer.instance().registerService(9001);
                 })
                 .get("/basic-routes-example", ctx -> ctx.text("GET called"))
