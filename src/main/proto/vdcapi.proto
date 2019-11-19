@@ -3,9 +3,8 @@ package vdcapi;
 option java_multiple_files = true;
 option java_package = "io.fennix.jvdc.proto";
 service VdsmService {
-
       rpc hello(vdsm_RequestHello) returns (vdc_ResponseHello) {}
-
+      rpc remove(vdsm_SendRemove) returns (GenericResponse) {}
 }
 
 message vdsm_RequestHello {

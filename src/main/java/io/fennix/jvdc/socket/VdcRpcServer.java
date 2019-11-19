@@ -2,6 +2,7 @@ package io.fennix.jvdc.socket;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
+import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,8 +26,9 @@ public class VdcRpcServer {
     public void openSocket(int port) {
         /* The port on which the server should run */
         try {
-            server = ServerBuilder.forPort(port)
+            server = NettyServerBuilder.forPort(port)
                     .addService(new VdcApiService())
+                    .protocolNegotiator()
                     .build()
                     .start();
             log.info("Server started, listening on " + port);
