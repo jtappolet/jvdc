@@ -3,8 +3,6 @@ package io.fennix.jvdc;
 import com.blade.Blade;
 import com.blade.event.EventType;
 import io.fennix.jvdc.announce.ServiceAnnouncer;
-import io.fennix.jvdc.socket.TcpSocketListener;
-import vdcapi.GreeterGrpc;
 
 public class Application {
 
